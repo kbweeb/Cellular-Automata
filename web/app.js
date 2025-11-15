@@ -6,6 +6,7 @@
   const stepBtn = document.getElementById('stepBtn');
   const clearBtn = document.getElementById('clearBtn');
   const speedInput = document.getElementById('speed');
+  const wrapInput = document.getElementById('wrap');
   const sizeInput = document.getElementById('size');
 
   let rows = parseInt(sizeInput.value, 10);
@@ -37,9 +38,16 @@
         for (let dy = -1; dy <= 1; dy++) {
           for (let dx = -1; dx <= 1; dx++) {
             if (dx === 0 && dy === 0) continue;
-            const ny = y + dy;
-            const nx = x + dx;
-            if (ny >= 0 && ny < rows && nx >= 0 && nx < cols) neighbors += grid[ny][nx];
+            let ny = y + dy;
+            let nx = x + dx;
+            if (wrapInput && wrapInput.checked) {
+              // toroidal wrap
+              ny = (ny + rows) % rows;
+              nx = (nx + cols) % cols;
+              neighbors += grid[ny][nx];
+            } else {
+              if (ny >= 0 && ny < rows && nx >= 0 && nx < cols) neighbors += grid[ny][nx];
+            }
           }
         }
         const alive = grid[y][x] === 1;

@@ -14,6 +14,7 @@
         <a href="https://kbweeb.github.io/" target="_blank" rel="noopener">Back to Portfolio →</a>
       </div>
       <div class="controls">
+        <label><input id="wrap" type="checkbox" checked /> Wrap edges (toroidal)</label>
         <button id="runBtn">Run</button>
         <button id="pauseBtn">Pause</button>
         <button id="stepBtn">Step</button>
@@ -23,6 +24,10 @@
       </div>
       <canvas id="grid" width="800" height="800"></canvas>
       <p class="note">Click on cells to toggle alive/dead. This is a client‑only demo UI for the repository.</p>
+      <section class="note" style="margin-top:12px">
+        <strong>How it works — Conway's Game of Life</strong><br/>
+        Each cell has 8 neighbors (Moore neighborhood). Rules: (1) Any live cell with 2 or 3 live neighbors survives; (2) Any dead cell with exactly 3 live neighbors becomes alive; (3) All other cells die or remain dead. Toggle "Wrap edges" to treat borders as connected (toroidal) so patterns passing an edge reappear on the opposite side. This demo updates the grid every N ms (Speed). Size controls the number of cells per side.
+      </section>
     </main>
     <script src="app.js"></script>
   </body>
