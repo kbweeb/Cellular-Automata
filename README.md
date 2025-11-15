@@ -29,10 +29,10 @@ pip install numpy matplotlib
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run (Python)
 
 ```bash
-python cellular_automaton.py
+python cellularautomata.py
 ```
 
 Or, run it from a Python IDE or Jupyter Notebook.
@@ -91,7 +91,8 @@ def game_of_life_rule(cell, neighbors):
 ## 📂 Project Structure
 
 ```
-cellular_automaton.py   # Main simulation script
+cellularautomata.py   # Main simulation script (Python)
+web/                  # Browser demo (static)
 ```
 
 You can rename this script as needed.
@@ -104,4 +105,12 @@ This project is open-source and free to use under the MIT License.
 
 ---
 
-Let me know if you want a version in Markdown format (`README.md`) or hosted on GitHub!
+## 🌐 Web Frontend (Browser Demo)
+
+This repo includes a lightweight static demo of Conway's Game of Life that runs entirely in the browser:
+
+- Folder: `web/`
+- Run locally: open `web/index.html` in a modern browser
+- Deploy: host the `web/` folder as a static site (e.g., Vercel/Netlify/GitHub Pages)
+
+Controls: Run, Pause, Step, Clear, Speed, and Grid Size. Click cells to toggle alive/dead.
